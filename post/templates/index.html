@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  this is the index page
+{% endblock %}
+
+{% block body %}
+  <ol>
+  {% for post in posts %}
+  <li>
+    <a href="{% url 'post:detail' post.id %}"> Post: {{ post.title_text }} <br/> </a>
+  </li>
+  {% endfor %}
+  </ol>
+  <a href="{% url 'post:create' %}"> ADD A CONTENT </a>
+{% endblock %}
